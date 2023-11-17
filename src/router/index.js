@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import {
   Routes,
-  HashRouter, Route, useNavigate, useLocation, useParams, useSearchParams
+  Route, useNavigate, useLocation, useParams, useSearchParams
 } from 'react-router-dom'
 import routes from "./routes";
 
@@ -32,13 +32,13 @@ const Element = function Element(props) {
 export default function RouterView() {
   return (
 
-      <Routes>
-        {
-          routes.map((route, index) => {
-            return <Route key={index} path={route.path} element={<Element component={route.component} route={route} />}></Route>
-          })
-        }
-      </Routes>
+    <Routes>
+      {
+        routes.map((route, index) => {
+          return <Route key={index} path={route.path} element={<Element component={route.component} route={route} />}></Route>
+        })
+      }
+    </Routes>
 
 
   )
